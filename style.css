@@ -1,0 +1,67 @@
+/* Minimalist serif-based portfolio styling */
+
+body {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+  margin-top: 60px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.project {
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 14px;
+  color: #666;
+}
+
+footer a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
