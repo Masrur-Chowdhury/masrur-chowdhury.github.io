@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QAM Encoder for precision rotational tracking – Masrur Chowdhury</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html">← Back to Home</a>
+  </nav>
 
+<main>
+  <h1>Custom Optical Encoder for Bond Pad Inspection</h1>
+
+  <p>
+    As part of my work in the optoelectronics group at Collins Aerospace, I developed a custom optical encoder system to estimate RTV (Room-Temperature Vulcanizing) adhesive volume in our bonded assemblies. The encoder was used to track the rotation of an air bearing spindle while a live camera feed recorded the bond interface in real-time. By correlating the angular position with image-derived thickness measurements, we calculated RTV distribution across the circumference of optical components.
+  </p>
+
+  <h2>Designing the Encoder System</h2>
+  <p>
+    I designed and prototyped a fully custom encoder setup using IR reflective sensors (TCRT5000), Arduino-based signal processing, and a printed tape with alternating line pairs. These were mounted to the edge of the spindle, enabling reliable detection of rotational motion. To achieve directional awareness and fine resolution (~0.2°), I placed the two sensors in quadrature — phase-shifted to detect the direction and rate of rotation.
+  </p>
+
+  <p>
+    My mechanical contributions included designing a custom sensor holder, precisely aligning the reflective tape around the spindle, and experimenting with different sensor spacing and tape resolutions to optimize accuracy. I iterated the design on a breadboard, testing multiple configurations before finalizing the setup.
+  </p>
+
+  <figure style="text-align: center;">
+    <img src="../images/encoder_schematic.png" 
+         alt="Simplified schematic of optical encoder system"
+         style="width: 100%; max-width: 650px; border-radius: 8px; margin: 20px auto; display: block;">
+    <figcaption style="font-size: 0.85em; color: gray;">
+      Schematic representation of the optical encoder system. Includes quadrature sensor alignment and reflective tape interface.
+    </figcaption>
+  </figure>
+
+  <h2>Testing and Signal Processing</h2>
+  <p>
+    I tested the encoder using a benchtop motion stage that incrementally rotated the reflective surface while monitoring sensor output on an oscilloscope and MATLAB plots. The processed signal was passed through a simple QAM-based decoder to resolve position data, which we validated against known step sizes.
+  </p>
+
+  <p>
+    The final setup was integrated with a live camera feed during RTV bond inspections, where it successfully correlated rotation angle to bond thickness, enabling volumetric RTV estimation.
+  </p>
+
+  <h2>Skills Gained</h2>
+  <ul>
+    <li>IR reflective sensor integration (TCRT5000)</li>
+    <li>Quadrature encoder design and alignment</li>
+    <li>Breadboard prototyping and test fixture development</li>
+    <li>Arduino microcontroller programming</li>
+    <li>MATLAB signal acquisition and visualization</li>
+    <li>QAM signal decoding for direction and resolution</li>
+    <li>Optical-mechanical fixture design for sensor mounting</li>
+    <li>Integration with air bearing spindle and live camera inspection workflow</li>
+  </ul>
+
+  <p><em>Images and circuit diagrams coming soon.</em></p>
+  <p><a href="../index.html#work">← Back to Selected Work</a></p>
+</main>
