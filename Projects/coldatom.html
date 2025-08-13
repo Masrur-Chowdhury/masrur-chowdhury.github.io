@@ -9,114 +9,82 @@
 <body>
   <nav class="navbar">
     <a href="../index.html">← Back to Home</a>
+    <a href="../index.html#work">Selected Work</a>
   </nav>
 
   <main>
     <h1>Cold Atom Laser System (Goodsell Lab, Middlebury College)</h1>
 
     <p>
-      In Prof. Anne Goodsell’s AMO (atomic, molecular, and optical) physics lab, I helped
-      build and refine a <strong>three‑laser rubidium cooling system</strong>—including fiber‑optic
-      delivery, precision alignment, and thermal management—to establish reliable
-      starting conditions for experiments on <strong>highly excited (Rydberg) atoms</strong>. The aim:
-      stable laser‑cooled atoms suitable for controlled excitation and field‑interaction studies.
+      I helped build and refine a laser cooling setup for rubidium (Rb), focusing on <strong>fiber‑optic integration</strong>,
+      alignment, and day‑to‑day stability so the team could spend more time collecting data. The system uses
+      <strong>Doppler cooling</strong>—tuning laser light slightly below an atomic transition so moving atoms preferentially
+      absorb opposite their motion—reducing their average kinetic energy and enabling observation of quantum behavior.
     </p>
 
-    <!-- Figure: high-level schematic / illustrative only -->
+    <!-- Schematic (illustrative) -->
     <figure style="text-align:center;">
-      <img
-        src="../images/Lasercolling_schem.png"
-        alt="Illustrative schematic of a rubidium cold-atom setup with three laser beams"
-        style="width:100%; max-width:720px; display:block; margin:20px auto; border-radius:8px;"
-      />
+      <img src="../images/cold_atom_overview.png"
+           alt="Illustrative schematic of cold-atom Rb setup with three laser beams, fiber delivery, MOT region, magnetic coils"
+           style="width:100%; max-width:760px; display:block; margin:20px auto; border-radius:8px;">
       <figcaption style="font-size:.85em; color:gray;">
-        Stylized, non‑proprietary overview of the cold‑atom setup (illustrative only).
+        Stylized, non‑proprietary overview (illustrative only).
       </figcaption>
     </figure>
 
-    <h2>System Overview</h2>
-    <p>
-      The setup centered on a rubidium vapor cell in a vacuum environment, illuminated by
-      <strong>three diode lasers</strong> (cooling, repump, and auxiliary/diagnostic), overlapped at the trap
-      region. <strong>Magnetic field coils</strong> provided the necessary spatially varying field to support
-      cooling/trapping, while <strong>fiber‑optic routing</strong> improved beam pointing stability and mode
-      quality. Power meters and irises aided diagnostics, and thermal/mechanical isolation helped
-      maintain alignment over time.
-    </p>
+    <h2>What We Built (high level)</h2>
+    <ul>
+      <li>Rb vapor cell with optical access; magnetic coils for trapping/cooling region.</li>
+      <li>Three‑laser configuration (cooling, repump, diagnostic) delivered via <strong>fiber</strong> to the table.</li>
+      <li>Beam shaping, polarization control, and diagnostics (power taps, irises) for repeatable alignment.</li>
+    </ul>
 
     <h2>My Contributions</h2>
     <ul>
-      <li><strong>Laser paths &amp; alignment:</strong> Co‑aligned three beams to the interaction region using apertures, irises, and viewing cards; tuned overlap and polarization where required.</li>
-      <li><strong>Fiber integration:</strong> Implemented fiber‑optic delivery (collimators/patch cords) to reduce pointing drift and simplify beam routing on the table.</li>
-      <li><strong>Thermal/mechanical stability:</strong> Managed cable strain relief, heat sinking for diode heads, and mount selection to reduce drift.</li>
-      <li><strong>Diagnostics:</strong> Set up power monitors and beam sampling for repeatable alignment/throughput checks.</li>
-      <li><strong>Documentation:</strong> Maintained schematics and procedures for repeatable startup and alignment.</li>
+      <li><strong>Fiber‑optic integration:</strong> Designed routing and strain‑relief; selected/installed collimators and patch cords to stabilize pointing and mode quality.</li>
+      <li><strong>In‑house fiber capability:</strong> Brought a <em>fusion splicer</em> online and produced <strong>custom fibers</strong> to match our layouts, cutting lead times.</li>
+      <li><strong>High‑quality splices:</strong> Achieved ~<strong>90% power retention</strong> (typical) across splices, minimizing interconnect loss.</li>
+      <li><strong>Alignment & stability:</strong> Standardized beam heights, apertures, and quick‑check procedures for faster daily bring‑up with less drift.</li>
+      <li><strong>Thermal/mechanical details:</strong> Managed cable routing, mount selection, and heatsinking to reduce long‑term drift.</li>
+      <li><strong>Documentation:</strong> Wrote setup notes and checklists so others could reproduce the alignment process.</li>
     </ul>
 
-    <!-- Figure: three-step laser diagram / illustrative only -->
-    <figure style="text-align:center;">
-      <img
-        src="../images/three_step_laser_cascade.png"
-        alt="Illustrative three-step diode laser cascade for rubidium cooling and repumping"
-        style="width:100%; max-width:720px; display:block; margin:20px auto; border-radius:8px;"
-      />
-      <figcaption style="font-size:.85em; color:gray;">
-        Illustrative three‑step diode laser cascade (wavelengths/levels shown generically, not to scale).
-      </figcaption>
-    </figure>
-
-    <h2>Why Laser Cooling?</h2>
-    <p>
-      Laser cooling prepares atoms with <strong>low velocity spread</strong>, enabling precision control and
-      measurement. For highly excited (Rydberg) states—whose <em>induced dipole moments</em> can be
-      large—cold starting conditions improve signal‑to‑noise, allow finer electric‑field control,
-      and support reproducible state preparation for downstream experiments.
-    </p>
-
-    <h2>Build &amp; Alignment Highlights</h2>
-    <ul>
-      <li><strong>Beam quality:</strong> Fiber delivery to improve Gaussian profile and pointing stability.</li>
-      <li><strong>Mode matching:</strong> Adjusted lenses/collimators to achieve beam sizes appropriate for cooling/repump paths.</li>
-      <li><strong>Magnetic field setup:</strong> Verified coil placement and polarity; ensured optical access and cable clearance.</li>
-      <li><strong>Thermal management:</strong> Managed diode temperature control and minimized thermal gradients at mounts.</li>
-      <li><strong>Repeatability:</strong> Created a quick‑check routine (power, beam height, aperture pass) for daily alignment.</li>
+    <h2>Results / My Impact</h2>
+    <ul class="project-results">
+      <li>Improved the test setup for observing quantum behavior in laser‑cooled Rb—<strong>longer, more stable runs</strong>.</li>
+      <li>Established <strong>in‑house custom fiber</strong> builds → faster reconfiguration and reduced dependence on long lead‑time orders.</li>
+      <li>~<strong>90%</strong> splice retention typical, keeping optical power budgets healthy across the system.</li>
+      <li>Smoother daily startup: less time re‑aligning, more time <strong>on experiment</strong>.</li>
     </ul>
 
-    <!-- Optional: placeholder for a simple MOT signal / fluorescence graphic -->
-    <figure style="text-align:center;">
-      <img
-        src="../images/lasercoolingchamber.png"
-        alt="Illustrative MOT fluorescence or signal vs. detuning (placeholder graphic)"
-        style="width:100%; max-width:680px; display:block; margin:20px auto; border-radius:8px;"
-      />
-      <figcaption style="font-size:.85em; color:gray;">
-        Example characterization graphic (illustrative data).
-      </figcaption>
-    </figure>
+    <!-- Photo gallery (use your actual filenames) -->
+    <h2>Photos</h2>
+    <section class="photo-grid">
+      <!-- Replace filenames with yours -->
+      <figure>
+        <img src="../images/fusion_splicer.jpg" alt="Fusion splicer used for in-house fiber builds">
+        <figcaption style="font-size:.85em; color:gray;">Fusion splicer brought into the lab workflow.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/custom_fiber_splice.jpg" alt="Close-up of custom fiber splice with measured throughput">
+        <figcaption style="font-size:.85em; color:gray;">Custom splice; ~90% power retention typical.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/table_fiber_routing.jpg" alt="Optical table showing fiber routing and collimator mounts">
+        <figcaption style="font-size:.85em; color:gray;">Fiber routing and collimators for stable delivery.</figcaption>
+      </figure>
+    </section>
 
-    <h2>Challenges &amp; Learnings</h2>
-    <p>
-      Achieving stable overlap between multiple beams in a constrained geometry requires tight
-      control of <strong>mechanical rigidity, thermal drift, polarization, and mode quality</strong>. Fiber routing
-      and a disciplined alignment sequence reduced day‑to‑day variance. The work strengthened my
-      intuition for <strong>beam diagnostics, vacuum/optics interplay, and repeatable lab procedures</strong>.
-    </p>
-
-    <h2>Skills Gained</h2>
-    <ul>
-      <li>Laser alignment &amp; safety; polarization control and beam diagnostics</li>
-      <li>Fiber‑optic routing, collimation, and coupling optimization</li>
-      <li>Opto‑mechanical mount selection, strain relief, and thermal management</li>
-      <li>Basic vacuum practice around atomic vapor cells and optical access</li>
-      <li>Procedure writing, setup reproducibility, and experiment documentation</li>
-      <li>Foundations for Rydberg‑atom excitation and electric‑field interaction studies</li>
-    </ul>
-
-    <p style="font-style:italic; color:gray;">
-      Notes: Diagrams and descriptions here are illustrative and do not depict proprietary apparatus or exact lab layouts.
+    <h2>Notes</h2>
+    <p style="color:gray;">
+      Diagrams and descriptions are illustrative and omit proprietary details (exact wavelengths/levels, CAD, and control software specifics).
     </p>
 
     <p><a href="../index.html#work">← Back to Selected Work</a></p>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Masrur Chowdhury</p>
+  </footer>
 </body>
 </html>
