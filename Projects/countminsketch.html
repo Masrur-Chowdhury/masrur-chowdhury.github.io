@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Count‑Min Sketch – Randomized Algorithms – Masrur Chowdhury</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html">← Back to Home</a>
+    <a href="../index.html#work">Selected Work</a>
+  </nav>
+
+  <main>
+    <h1>Count‑Min Sketch (CMS): Streaming Word Frequency Estimation</h1>
+
+    <p>
+      I implemented a <strong>Count‑Min Sketch</strong> to estimate word frequencies in large text streams,
+      then used it to surface the most frequent words across multiple English translations of a long text.
+      The CMS delivers near‑instant queries with <strong>sublinear memory</strong>, making it ideal for
+      streaming/large‑file scenarios where exact counting is expensive.
+    </p>
+
+    <h2>Why Count‑Min Sketch?</h2>
+    <ul>
+      <li><strong>Speed:</strong> O(1) update and O(1) query (amortized) per hash function.</li>
+      <li><strong>Small memory:</strong> Fixed 2D array instead of a map of all distinct words.</li>
+      <li><strong>Tunable error:</strong> Choose width/depth to bound overestimation with parameters (ε, δ).</li>
+    </ul>
+
+    <h2>How It Works (Brief)</h2>
+    <p>
+      Maintain a <strong>d × w</strong> array of counters. For each arriving token <code>x</code>, hash it with
+      <code>d</code> independent functions <code>h<sub>1..d</sub></code> and increment
+      <code>table[i][h_i(x)]</code>. The estimated count of <code>x</code> is the
+      <em>minimum</em> across its <code>d</code> counters (hence “min”).
+    </p>
+
+    <figure style="text-align:center;">
+      <img src="../images/cms_diagram.png" alt="Illustrative diagram of Count-Min Sketch with d hash rows mapping a word to d counters"
+           style="width:100%; max-width:680px; display:block; margin:20px auto; border-radius:8px;">
+      <figcaption style="font-size:.85em; color:gray;">
+        Stylized CMS layout (illustrative; not to scale).
+      </figcaption>
+    </figure>
+
+    <h2>Parameter Choices</h2>
+    <p>
+      CMS error guarantees are controlled by width <code>w</code> and depth <code>d</code>:
+    </p>
+    <ul>
+      <li><strong>w ≈ e/ε</strong> bounds the additive error to at most <code>ε · N</code> with high probability.</li>
+      <li><strong>d ≈ ln(1/δ)</strong> drives the failure probability below <code>δ</code>.</li>
+    </ul>
+    <p>
+      Practically, pick <code>w</code> as a convenient prime (e.g., ~400–4000) and <code>d</code> as 3–5 rows.
+      I used multiple independent hash seeds over a fast string hash for <em>h<sub>i</sub></em>.
+    </p>
+
+    <h2>Pipeline</h2>
+    <ul>
+      <li><strong>Ingest:</strong> Read text stream; lowercase; strip punctuation; tokenize.</li>
+      <li><strong>Update:</strong> For each token, update CMS counters across <code>d</code> rows.</li>
+      <li><strong>Query:</strong> Estimate counts with <em>min</em> across rows; track top‑k as you stream.</li>
+      <li><strong>Validate:</strong> Compare top‑k against exact map on smaller samples (or final pass).</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul class="project-results">
+      <li>Identified the most frequent words in multi‑MB texts in ~<strong>1–2 seconds</strong> on a laptop.</li>
+      <li>Matched exact heavy‑hitters in tests while using a fixed‑size sketch (no per‑word growth).</li>
+      <li>Swappable hash families and parameters let me trade memory for accuracy on demand.</li>
+    </ul>
+
+    <h2>Complexity</h2>
+    <ul>
+      <li><strong>Update:</strong> O(d) per token (constant in practice).</li>
+      <li><strong>Query:</strong> O(d) per key; O(1) if tracking top‑k during streaming.</li>
+      <li><strong>Space:</strong> O(d·w) integers — fixed and independent of unique word count.</li>
+    </ul>
+
+    <h2>Notes &amp; Extensions</h2>
+    <ul>
+      <li>Heavy‑hitter tracking with a small heap during streaming avoids a full pass later.</li>
+      <li>Can combine with a stop‑word list or stemming to analyze semantics across translations.</li>
+      <li>For exactness on small inputs, fall back to a hashmap; use CMS for the big stuff.</li>
+    </ul>
+
+    <p style="font-style:italic; color:gray;">
+      This page highlights algorithm design and implementation details only; diagrams are illustrative.
+    </p>
+
+    <p><a href="../index.html#work">← Back to Selected Work</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Masrur Chowdhury</p>
+  </footer>
+</body>
+</html>
