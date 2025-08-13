@@ -128,10 +128,10 @@
   <h3><a href="Projects/countminsketch.html">Count-Min Sketch- Randomized Algorithms (Programming)</a></h3>
   <p><strong>Results/My Impact:</strong></p>
   <ul class="project-results">
-    <li>Found the most frequent word in large texts in ~1–2 seconds using a sublinear‑space sketch.</li>
-    <li>Memory usage bounded and tunable (ε, δ); handled multi‑MB files without growing counters per-word.</li>
-    <li>Accuracy matched exact counts on top‑k words in tests (practically “to the dot” on heavy hitters).</li>
-    <li>Built a clean ingestion pipeline: tokenize → hash-family → 2D counter array → query.</li>
+    <li>Found most‑frequent words in multi‑MB texts in ~<strong>1–2 s</strong> on a laptop.</li>
+    <li>Matched exact top‑words in checks while using a fixed‑size sketch (no per‑word growth).</li>
+    <li>Kept memory small with a 2D counter table (width ~<strong>397</strong>, depth <strong>3</strong>), plus a tiny heap for top‑k.</li>
+    <li>Clean pipeline: tokenize → hash to counters → stream top‑k (k for common word).</li>
   </ul>
 
 
