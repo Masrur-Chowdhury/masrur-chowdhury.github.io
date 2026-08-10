@@ -161,8 +161,10 @@ footer a:hover {
   transition: transform 0.2s ease-in-out;
 }
 
-.photo-grid img:hover {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+  .photo-grid img:hover {
+    transform: scale(1.03);
+  }
 }
 
 .lightbox-trigger {
