@@ -38,6 +38,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
 }
 
 header {
@@ -78,11 +79,12 @@ p {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
   background-color: var(--navbar-bg);
-  padding: 20px 0;
+  padding: 20px 20px;
   margin-bottom: 40px;
   border-bottom: 2px solid var(--navbar-border);
 }
@@ -161,5 +163,31 @@ footer a:hover {
 
 .photo-grid img:hover {
   transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 20px 16px;
+  }
+
+  .navbar {
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .navbar a,
+  .theme-toggle {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .profile-pic {
+    width: 110px;
+  }
 }
 
