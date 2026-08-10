@@ -1,5 +1,33 @@
 /* Minimalist serif-based portfolio styling */
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --heading-border: #ddd;
+  --navbar-bg: #f4f4f4;
+  --navbar-border: #ccc;
+  --link-bg: #e0e0e0;
+  --link-text: #333;
+  --link-hover-bg: #333;
+  --link-hover-text: #fff;
+  --footer-text: #666;
+  --shadow-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e8e8e8;
+  --heading-border: #3a3a3a;
+  --navbar-bg: #1c1c1c;
+  --navbar-border: #333;
+  --link-bg: #2a2a2a;
+  --link-text: #e0e0e0;
+  --link-hover-bg: #e0e0e0;
+  --link-hover-text: #111;
+  --footer-text: #999;
+  --shadow-color: rgba(0,0,0,0.4);
+}
+
 body {
   font-family: 'Georgia', serif;
   font-size: 18px;
@@ -7,8 +35,9 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 header {
@@ -23,7 +52,7 @@ h1 {
 
 h2 {
   font-size: 24px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--heading-border);
   padding-bottom: 4px;
   margin-top: 60px;
 }
@@ -50,17 +79,18 @@ p {
 .navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
-  background-color: #f4f4f4;
+  background-color: var(--navbar-bg);
   padding: 20px 0;
   margin-bottom: 40px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid var(--navbar-border);
 }
 
 .navbar a {
   text-decoration: none;
-  color: #333;
-  background-color: #e0e0e0;
+  color: var(--link-text);
+  background-color: var(--link-bg);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -69,8 +99,26 @@ p {
 }
 
 .navbar a:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--link-hover-bg);
+  color: var(--link-hover-text);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  color: var(--link-text);
+  background-color: var(--link-bg);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--link-hover-bg);
+  color: var(--link-hover-text);
 }
 
 
@@ -83,11 +131,11 @@ footer {
   text-align: center;
   margin-top: 80px;
   font-size: 14px;
-  color: #666;
+  color: var(--footer-text);
 }
 
 footer a {
-  color: #666;
+  color: var(--footer-text);
   text-decoration: none;
   margin: 0 8px;
 }
@@ -107,7 +155,7 @@ footer a:hover {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
   transition: transform 0.2s ease-in-out;
 }
 
